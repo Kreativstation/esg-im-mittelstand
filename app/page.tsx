@@ -16,25 +16,38 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="max-w-3xl mx-auto px-8 py-24 text-center">
-        <span className="inline-block mb-4 text-xs font-semibold uppercase tracking-widest text-green-600 bg-green-50 px-3 py-1 rounded-full">
-          Nachhaltigkeit für den Mittelstand
-        </span>
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-          ESG — einfach, praxisnah und<br className="hidden md:block" /> für den Mittelstand.
-        </h1>
-        <p className="text-lg text-gray-500 mb-10 max-w-xl mx-auto">
-          Wir begleiten mittelständische Unternehmen auf dem Weg zu mehr Nachhaltigkeit —
-          von der Strategie bis zur Berichterstattung.
-        </p>
-        <a
-          href="https://www.linkedin.com/company/esg-im-mittelstand/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-green-800 transition-colors"
-        >
-          Jetzt vernetzen
-        </a>
+      <section
+        className="relative px-8 py-36 text-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1600&q=80')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/55" />
+
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <span className="inline-block mb-4 text-xs font-semibold uppercase tracking-widest text-cyan-300 bg-white/10 px-3 py-1 rounded-full">
+            Nachhaltigkeit für den Mittelstand
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+            ESG — einfach, praxisnah und<br className="hidden md:block" /> für den Mittelstand.
+          </h1>
+          <p className="text-lg text-gray-300 mb-10 max-w-xl mx-auto">
+            Wir begleiten mittelständische Unternehmen auf dem Weg zu mehr Nachhaltigkeit —
+            von der Strategie bis zur Berichterstattung.
+          </p>
+          <a
+            href="https://www.linkedin.com/company/esg-im-mittelstand/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-cyan-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-cyan-600 transition-colors"
+          >
+            Jetzt vernetzen
+          </a>
+        </div>
       </section>
 
       {/* Pillars */}
@@ -104,7 +117,7 @@ export default function Home() {
           href="https://www.linkedin.com/company/esg-im-mittelstand/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-green-700 font-semibold px-8 py-3 rounded-lg hover:bg-green-50 transition-colors"
+          className="inline-block bg-white text-cyan-600 font-semibold px-8 py-3 rounded-lg hover:bg-cyan-50 transition-colors"
         >
           Auf LinkedIn folgen
         </a>
