@@ -1,65 +1,119 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-white text-gray-800 font-sans">
+
+      {/* Nav */}
+      <nav className="flex items-center justify-between px-8 py-5 border-b border-gray-100">
+        <span className="text-xl font-bold text-green-700">ESG im Mittelstand</span>
+        <a
+          href="https://www.linkedin.com/company/esg-im-mittelstand/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-medium text-green-700 hover:underline"
+        >
+          LinkedIn →
+        </a>
+      </nav>
+
+      {/* Hero */}
+      <section className="max-w-3xl mx-auto px-8 py-24 text-center">
+        <span className="inline-block mb-4 text-xs font-semibold uppercase tracking-widest text-green-600 bg-green-50 px-3 py-1 rounded-full">
+          Nachhaltigkeit für den Mittelstand
+        </span>
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          ESG — einfach, praxisnah und<br className="hidden md:block" /> für den Mittelstand.
+        </h1>
+        <p className="text-lg text-gray-500 mb-10 max-w-xl mx-auto">
+          Wir begleiten mittelständische Unternehmen auf dem Weg zu mehr Nachhaltigkeit —
+          von der Strategie bis zur Berichterstattung.
+        </p>
+        <a
+          href="https://www.linkedin.com/company/esg-im-mittelstand/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-green-800 transition-colors"
+        >
+          Jetzt vernetzen
+        </a>
+      </section>
+
+      {/* Pillars */}
+      <section className="bg-gray-50 py-20 px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-12">Die drei ESG-Säulen</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                letter: "E",
+                title: "Environment",
+                desc: "CO₂-Reduktion, Ressourceneffizienz und Klimastrategie — messbar und umsetzbar.",
+              },
+              {
+                letter: "S",
+                title: "Social",
+                desc: "Faire Arbeitsbedingungen, Diversität und gesellschaftliche Verantwortung im Unternehmen.",
+              },
+              {
+                letter: "G",
+                title: "Governance",
+                desc: "Transparente Unternehmensführung, Compliance und nachhaltige Entscheidungsstrukturen.",
+              },
+            ].map(({ letter, title, desc }) => (
+              <div key={letter} className="bg-white rounded-xl p-8 shadow-sm">
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-green-100 text-green-700 font-bold text-xl mb-4">
+                  {letter}
+                </div>
+                <h3 className="font-semibold text-lg mb-2">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Why */}
+      <section className="max-w-3xl mx-auto px-8 py-20 text-center">
+        <h2 className="text-2xl font-bold mb-6">Warum ESG im Mittelstand?</h2>
+        <p className="text-gray-500 text-base leading-relaxed mb-8">
+          Neue EU-Regulierungen wie die CSRD betreffen auch den Mittelstand — direkt oder
+          über Lieferketten. Wir helfen Ihnen, Anforderungen zu verstehen, Chancen zu
+          erkennen und Nachhaltigkeit als echten Wettbewerbsvorteil zu nutzen.
+        </p>
+        <ul className="inline-flex flex-col gap-3 text-left text-sm text-gray-600">
+          {[
+            "Praxisorientierte Beratung ohne Berater-Jargon",
+            "Netzwerk aus Unternehmern, Experten und Partnern",
+            "Aktuelle Inhalte zu Regulierung & Best Practices",
+            "Community auf LinkedIn mit tausenden Followern",
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <span className="mt-0.5 text-green-600">✓</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-green-700 text-white py-16 px-8 text-center">
+        <h2 className="text-2xl font-bold mb-4">Werden Sie Teil der Community</h2>
+        <p className="text-green-100 mb-8 max-w-md mx-auto">
+          Folgen Sie uns auf LinkedIn und bleiben Sie über ESG-Themen im Mittelstand auf dem Laufenden.
+        </p>
+        <a
+          href="https://www.linkedin.com/company/esg-im-mittelstand/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-white text-green-700 font-semibold px-8 py-3 rounded-lg hover:bg-green-50 transition-colors"
+        >
+          Auf LinkedIn folgen
+        </a>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center py-8 text-xs text-gray-400">
+        © {new Date().getFullYear()} ESG im Mittelstand e.V. — Alle Rechte vorbehalten.
+      </footer>
+    </main>
   );
 }
